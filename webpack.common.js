@@ -1,10 +1,11 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./src/controller.js",
   },
   output: {
     filename: "main.js",
@@ -24,6 +25,7 @@ module.exports = {
         },
       ],
     }),
+    new Dotenv(),
   ],
   module: {
     rules: [

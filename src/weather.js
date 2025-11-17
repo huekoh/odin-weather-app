@@ -1,0 +1,18 @@
+export const getWeather = async (location) => {
+  try {
+    const apiKey = process.env.API_KEY;
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&include=days%2Ccurrent%2Chours&key=${apiKey}&contentType=json`;
+
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    throw error;
+  }
+};
