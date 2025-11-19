@@ -1,4 +1,4 @@
-export const getWeather = async (location) => {
+export const getWeatherData = async (location) => {
   try {
     const apiKey = process.env.API_KEY;
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&include=days%2Ccurrent%2Chours&key=${apiKey}&contentType=json`;

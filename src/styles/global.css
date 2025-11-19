@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
 :root {
   line-height: 1.5;
 
   --text-2xs: 0.3rem;
   --text-xs: 0.5rem;
-  --text-sm: 0.825rem;
+  --text-sm: 0.9rem;
   --text-base: 1rem;
   --text-med: 1.25rem;
   --text-lg: 1.5rem;
@@ -45,7 +47,143 @@ div,
 p,
 a,
 label,
+button,
+input {
+  font-family: "Poppins", Inter, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
 button {
-  font-family: Inter, system-ui, "Segoe UI", Roboto, Helvetica, Arial,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  border-style: none;
+  border-radius: 0.4rem;
+  padding: 0.3rem 1rem;
+
+  background-color: rgb(0, 75, 129);
+  color: white;
+}
+
+/* remove overscroll behaviour present in mac browsers */
+body {
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
+}
+
+/* styling classes */
+/* card sizes */
+.card-square-small {
+  width: 48px;
+  height: 48px;
+}
+
+.card-square-med {
+  width: 64px;
+  height: 64px;
+}
+
+.card-square-large {
+  width: 120px;
+  height: 120px;
+}
+
+/* icon styling */
+.icon-div-small {
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.grey-svg {
+  filter: invert(89%) sepia(5%) saturate(273%) hue-rotate(355deg)
+    brightness(50%) contrast(91%);
+}
+
+/* background styling */
+.no-background {
+  background: none;
+}
+
+.background-frosted {
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* border styling */
+.border-rounded {
+  border-radius: 0.8rem;
+}
+
+.border-white-outline {
+  border-style: solid;
+  border-width: 0.5rem;
+  border-color: white;
+}
+
+.no-border {
+  border-style: none;
+}
+
+/* display styling */
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-left-05 {
+  margin-left: 0.5rem;
+}
+
+/* pseudoclass styling */
+.no-focus:focus {
+  border-style: none;
+  outline: none;
+}
+
+/* background video styling */
+#background-vid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+
+  z-index: -5;
+}
+
+header {
+  padding: 1.5rem 2rem;
+}
+
+/* search bar styling */
+#searchbar {
+  width: 500px;
+  padding: 0.4rem 0.6rem;
+}
+
+#location-input {
+  min-width: 300px;
+  padding: 0rem 0.5rem;
+  font-size: var(--text-sm);
 }

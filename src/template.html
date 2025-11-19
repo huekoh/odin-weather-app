@@ -5,5 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forecast</title>
   </head>
-  <body></body>
+  <body>
+    <header class="flex justify-center">
+      <form
+        id="searchbar"
+        class="border-rounded no-border background-frosted flex align-center"
+      >
+        <label for="location-input" class="icon-div-small margin-left-05">
+          <img
+            src="./assets/icons/search_icon.svg"
+            alt="search icon"
+            class="icon grey-svg"
+          />
+        </label>
+        <input
+          type="text"
+          placeholder="Enter a region/city..."
+          id="location-input"
+          class="border-rounded no-background no-border no-focus"
+        />
+        <button id="submit-btn" type="submit" class="margin-left-auto">
+          Search
+        </button>
+      </form>
+    </header>
+    <video autoplay muted loop id="background-vid">
+      <source src="./assets/videos/sunrise.mp4" type="video/mp4" />
+    </video>
+  </body>
 </html>
