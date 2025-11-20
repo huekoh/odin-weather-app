@@ -1,3 +1,8 @@
+export const state = {
+  location: "Singapore",
+  data: {},
+};
+
 export const getWeatherData = async (location) => {
   try {
     const apiKey = process.env.API_KEY;
@@ -10,6 +15,7 @@ export const getWeatherData = async (location) => {
     }
 
     const data = await response.json();
+    state.data = data;
     return data;
   } catch (error) {
     console.error("Error fetching weather data:", error);
