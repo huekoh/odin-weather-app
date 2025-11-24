@@ -1,5 +1,5 @@
 export const state = {
-  location: "Singapore",
+  location: "",
   data: {},
 };
 
@@ -21,4 +21,12 @@ export const getWeatherData = async (location) => {
     console.error("Error fetching weather data:", error);
     throw error;
   }
+};
+
+export const getCurrLocation = () => {
+  return state.location;
+};
+
+export const updateLocation = (location) => {
+  state.location = location;
 };

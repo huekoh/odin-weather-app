@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <h1 class="grey">FORECAST</h1>
+      <h1 class="grey">THE FORECAST</h1>
       <form
         id="searchbar"
         class="border-rounded no-border background-frosted flex align-center"
@@ -16,7 +16,7 @@
           <img
             src="./assets/icons/search_icon.svg"
             alt="search icon"
-            class="icon grey-svg"
+            class="icon cream-svg"
           />
         </label>
         <input
@@ -47,7 +47,9 @@
           </div>
         </div>
         <div id="curr-temp">
-          <p class="cream weight-med text-med">Wednesday 30 November, 23:33</p>
+          <p id="curr-time" class="cream weight-med text-med">
+            Wednesday 30 November, 23:33
+          </p>
           <p
             class="text-6xl line-height-7 cream weight-semibold letter-space-05"
           >
@@ -59,17 +61,8 @@
             just rain anyways
           </p>
         </div>
-        <!--
-        <div id="curr-more-details" class="flex-col gap-0p2">
-          <p class="cream weight-med text-med margin-bot-1p2">More details</p>
-          <p class="cream weight-light text-sm">Air Humidity: 77.1%</p>
-          <p class="cream weight-light text-sm">Wind Speed: 5.7m/s</p>
-          <p class="cream weight-light text-sm">Air Pressure: 1014ms</p>
-          <p class="cream weight-light text-sm">Precipitate Probability: 0%</p>
-          <p class="cream weight-light text-sm">Visibility: 6.1</p>
-        </div>
-        -->
       </section>
+
       <section id="curr-humidity-data" class="weather-card">
         <p class="cream-95 weight-med text-base line-height-2">HUMIDITY</p>
       </section>
@@ -232,18 +225,6 @@
             </div>
             <p class="cream">28°C</p>
           </div>
-
-          <div class="hour-component">
-            <p class="cream">12:00</p>
-            <div class="icon-div-med">
-              <img
-                src="./assets/icons/cloud_and_sun.png"
-                alt="weather icon"
-                class="icon"
-              />
-            </div>
-            <p class="cream">28°C</p>
-          </div>
         </div>
       </section>
 
@@ -260,7 +241,7 @@
       </section>
     </section>
     <video autoplay muted loop id="background-vid">
-      <source src="./assets/videos/sunrise.mp4" type="video/mp4" />
+      <source src="./assets/videos/sunny_cloud.mp4" type="video/mp4" />
     </video>
   </body>
 </html>
