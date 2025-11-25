@@ -8,24 +8,45 @@ const init = () => {
   const backgroundVideo = document.getElementById("background-vid");
   backgroundVideo.playbackRate = 0.8;
 
-  // initialise handlers
   view.addHandlerGetLocationInput(getLocationInputHandler);
+
+  // initial page load up
+  weather
+    .getWeatherData(weather.getCurrLocation())
+    .then(() => updatePageDataHandler())
+    .catch((error) => {
+      console.log("Initial data fetch unsuccessful:", error);
+    });
 };
 
-const getLocationInputHandler = (location) => {
-  const currWeather = weather.getCurrLocation();
+const getLocationInputHandler = async (location) => {
+  try {
+    weather.updateLocation(location);
+    const data = await weather.getWeatherData(location);
 
-  weather.updateLocation(location);
-  weather
-    .getWeatherData(location)
-    .then((data) => {
-      console.log(data);
-      view.hideFormError();
-    })
-    .catch((error) => {
-      console.log(error);
-      view.showFormError();
-    });
+    DataFetchSuccessHandler(data);
+  } catch (error) {
+    DataFetchErrorHandler(error);
+  }
+};
+
+const DataFetchSuccessHandler = (data) => {
+  console.log(data);
+  view.hideFormError();
+  weather.updateLocation(data.resolvedAddress);
+  updatePageDataHandler();
+};
+
+const DataFetchErrorHandler = (error) => {
+  console.log(error);
+  view.showFormError(error);
+};
+
+const updatePageDataHandler = () => {
+  const currLocation = weather.getCurrLocation();
+  const currConditionsData = weather.getCurrConditionsData();
+  const currTimeZone = weather.getCurrTimeZone();
+  view.renderCurrConditionsData(currLocation, currConditionsData, currTimeZone);
 };
 
 init();

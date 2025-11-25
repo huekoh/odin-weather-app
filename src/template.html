@@ -15,7 +15,7 @@
         >
           <label for="location-input" class="icon-div-small margin-left-05">
             <img
-              src="./assets/icons/search_icon.svg"
+              src="./assets/icons/utility/search_icon.svg"
               alt="search icon"
               class="icon cream-svg"
             />
@@ -30,9 +30,7 @@
             Search
           </button>
         </form>
-        <p id="error-msg" class="error-color margin-left-3 hidden">
-          Please provide a valid location
-        </p>
+        <p id="error-msg" class="error-color margin-left-3 hidden"></p>
       </div>
     </header>
 
@@ -40,43 +38,35 @@
       <section id="curr-data" class="flex gap-1p5 align-bottom">
         <div id="curr-icon-and-sun" class="flex-col gap-1">
           <div class="icon-div-lg">
-            <img
-              src="./assets/icons/cloud_and_sun.png"
-              alt="weather icon"
-              class="icon"
-            />
+            <img id="curr-icon" alt="weather icon" class="icon" />
           </div>
           <div>
-            <p class="cream weight-light text-sm">Sunrise: 06:47</p>
-            <p class="cream weight-light text-sm">Sunset: 19:32</p>
+            <p id="sunrise-text" class="cream weight-light text-sm">
+              Sunrise: 06:47
+            </p>
+            <p id="sunset-text" class="cream weight-light text-sm">
+              Sunset: 19:32
+            </p>
           </div>
         </div>
         <div id="curr-temp">
-          <div class="flex gap-0p4 align-center">
+          <div class="flex gap-0p4 align-center height-36px">
             <div class="icon-div-small">
               <img
-                src="./assets/icons/location_pin.svg"
+                src="./assets/icons/utility/location_pin.svg"
                 alt="location icon"
                 class="icon cream-svg"
               />
             </div>
-            <h3 id="location-text" class="cream weight-semibold text-lg">
-              Singapore
-            </h3>
+            <h3 id="location-text" class="cream weight-semibold text-lg"></h3>
           </div>
 
           <p
+            id="temp-text"
             class="text-6xl line-height-7 cream weight-semibold letter-space-05"
-          >
-            16°C
-          </p>
-          <p id="curr-time" class="cream weight-med text-med">
-            Wednesday 30 November, 23:33
-          </p>
-          <p class="cream weight-light text-sm">
-            The whole day will be cloudy with partial sunlight but tbh it might
-            just rain anyways
-          </p>
+          ></p>
+          <p id="curr-time" class="cream weight-med text-med"></p>
+          <p id="conditions-text" class="cream weight-light text-sm"></p>
         </div>
       </section>
 
@@ -103,7 +93,7 @@
             <p class="cream">Now</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -115,7 +105,7 @@
             <p class="cream">01:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -127,7 +117,7 @@
             <p class="cream">02:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -139,7 +129,7 @@
             <p class="cream">03:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -151,7 +141,7 @@
             <p class="cream">04:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -163,7 +153,7 @@
             <p class="cream">05:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -175,7 +165,7 @@
             <p class="cream">06:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -187,7 +177,7 @@
             <p class="cream">07:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -199,7 +189,7 @@
             <p class="cream">08:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -211,7 +201,7 @@
             <p class="cream">09:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -223,7 +213,7 @@
             <p class="cream">10:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -235,7 +225,7 @@
             <p class="cream">11:00</p>
             <div class="icon-div-med">
               <img
-                src="./assets/icons/cloud_and_sun.png"
+                src="./assets/icons/weather/cloudy.png"
                 alt="weather icon"
                 class="icon"
               />
@@ -244,7 +234,6 @@
           </div>
         </div>
       </section>
-
       <section id="curr-wind-data" class="weather-card">
         <p class="cream-95 weight-med text-base line-height-2">WIND</p>
       </section>
@@ -258,7 +247,7 @@
       </section>
     </section>
     <video autoplay muted loop id="background-vid">
-      <source src="./assets/videos/sunrise.mp4" type="video/mp4" />
+      <source src="./assets/videos/sunny_cloud.mp4" type="video/mp4" />
     </video>
   </body>
 </html>

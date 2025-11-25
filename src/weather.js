@@ -1,12 +1,12 @@
 export const state = {
-  location: "",
+  location: "Singapore",
   data: {},
 };
 
 export const getWeatherData = async (location) => {
   try {
     const apiKey = process.env.API_KEY;
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=us&include=days%2Ccurrent%2Chours&key=${apiKey}&contentType=json`;
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=days%2Ccurrent%2Chours&key=${apiKey}&contentType=json`;
 
     const response = await fetch(url);
 
@@ -29,4 +29,13 @@ export const getCurrLocation = () => {
 
 export const updateLocation = (location) => {
   state.location = location;
+};
+
+export const getCurrConditionsData = () => {
+  return state.data.currentConditions;
+};
+
+export const getCurrTimeZone = () => {
+  console.log(state.data.timezone);
+  return state.data.timezone;
 };
