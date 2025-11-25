@@ -7,3 +7,13 @@ export const addHandlerGetLocationInput = (handler) => {
     form.reset();
   });
 };
+
+export const showFormError = () => {
+  const error = document.getElementById("error-msg");
+  error.style.display = "block";
+};
+
+export const hideFormError = () => {
+  const error = document.getElementById("error-msg");
+  error.style.display = "none";
+};

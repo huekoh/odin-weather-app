@@ -14,14 +14,18 @@ const init = () => {
 
 const getLocationInputHandler = (location) => {
   const currWeather = weather.getCurrLocation();
-  if (location === currWeather) {
-    return;
-  }
+
   weather.updateLocation(location);
   weather
     .getWeatherData(location)
-    .then((data) => console.log(data))
-    .catch((error) => console.error(error));
+    .then((data) => {
+      console.log(data);
+      view.hideFormError();
+    })
+    .catch((error) => {
+      console.log(error);
+      view.showFormError();
+    });
 };
 
 init();

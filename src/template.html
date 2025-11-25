@@ -7,28 +7,33 @@
   </head>
   <body>
     <header>
-      <h1 class="grey">THE FORECAST</h1>
-      <form
-        id="searchbar"
-        class="border-rounded no-border background-frosted flex align-center"
-      >
-        <label for="location-input" class="icon-div-small margin-left-05">
-          <img
-            src="./assets/icons/search_icon.svg"
-            alt="search icon"
-            class="icon cream-svg"
+      <h1 class="grey line-height-42px">THE FORECAST</h1>
+      <div class="height-80px">
+        <form
+          id="searchbar"
+          class="border-rounded no-border background-frosted flex align-center"
+        >
+          <label for="location-input" class="icon-div-small margin-left-05">
+            <img
+              src="./assets/icons/search_icon.svg"
+              alt="search icon"
+              class="icon cream-svg"
+            />
+          </label>
+          <input
+            type="text"
+            placeholder="Enter a region/city..."
+            id="location-input"
+            class="border-rounded no-background no-border no-focus"
           />
-        </label>
-        <input
-          type="text"
-          placeholder="Enter a region/city..."
-          id="location-input"
-          class="border-rounded no-background no-border no-focus"
-        />
-        <button id="submit-btn" type="submit" class="margin-left-auto cream">
-          Search
-        </button>
-      </form>
+          <button id="submit-btn" type="submit" class="margin-left-auto cream">
+            Search
+          </button>
+        </form>
+        <p id="error-msg" class="error-color margin-left-3 hidden">
+          Please provide a valid location
+        </p>
+      </div>
     </header>
 
     <section id="content">
@@ -47,15 +52,27 @@
           </div>
         </div>
         <div id="curr-temp">
-          <p id="curr-time" class="cream weight-med text-med">
-            Wednesday 30 November, 23:33
-          </p>
+          <div class="flex gap-0p4 align-center">
+            <div class="icon-div-small">
+              <img
+                src="./assets/icons/location_pin.svg"
+                alt="location icon"
+                class="icon cream-svg"
+              />
+            </div>
+            <h3 id="location-text" class="cream weight-semibold text-lg">
+              Singapore
+            </h3>
+          </div>
+
           <p
             class="text-6xl line-height-7 cream weight-semibold letter-space-05"
           >
             16°C
           </p>
-          <p class="cream weight-med text-med">Feels like 20°C</p>
+          <p id="curr-time" class="cream weight-med text-med">
+            Wednesday 30 November, 23:33
+          </p>
           <p class="cream weight-light text-sm">
             The whole day will be cloudy with partial sunlight but tbh it might
             just rain anyways
@@ -241,7 +258,7 @@
       </section>
     </section>
     <video autoplay muted loop id="background-vid">
-      <source src="./assets/videos/sunny_cloud.mp4" type="video/mp4" />
+      <source src="./assets/videos/sunrise.mp4" type="video/mp4" />
     </video>
   </body>
 </html>

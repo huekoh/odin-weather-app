@@ -14,6 +14,10 @@
   .cream-95 {
     color: #fff9e895;
   }
+
+  .error-color {
+    color: #911915df;
+  }
 }
 
 @layer base {
@@ -144,11 +148,12 @@
   }
 
   header {
+    box-sizing: border-box;
     margin: 1.5rem 5%;
     margin-bottom: 8rem;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
 
     min-width: 500px;
@@ -157,8 +162,10 @@
   /* search bar styling */
   #searchbar {
     flex: 1 0 510px;
-    max-width: 540px;
+    width: 540px;
     padding: 0.4rem 0.6rem;
+
+    margin-bottom: 0.6rem;
   }
 
   #location-input {
@@ -301,6 +308,10 @@
   }
 
   /* display styling */
+  .height-80px {
+    height: 80px;
+  }
+
   .grid {
     display: grid;
   }
@@ -342,6 +353,10 @@
     gap: 0.2rem;
   }
 
+  .gap-0p4 {
+    gap: 0.4rem;
+  }
+
   .gap-0p6 {
     gap: 0.6rem;
   }
@@ -369,6 +384,10 @@
 
   .margin-top-auto {
     margin-top: auto;
+  }
+
+  .margin-left-3 {
+    margin-left: 3rem;
   }
 
   .margin-left-05 {
@@ -414,6 +433,14 @@
     font-size: 1.25rem;
   }
 
+  .text-lg {
+    font-size: 1.5rem;
+  }
+
+  .text-2xl {
+    font-size: 2rem;
+  }
+
   .text-4xl {
     font-size: 4rem;
   }
@@ -446,12 +473,16 @@
     font-weight: 600;
   }
 
-  .weight-semibold {
+  .weight-bold {
     font-weight: 700;
   }
 
   .letter-space-05 {
     letter-spacing: -0.5px;
+  }
+
+  .line-height-42px {
+    line-height: 42px;
   }
 
   .line-height-2 {
