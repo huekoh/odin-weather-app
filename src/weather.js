@@ -36,6 +36,37 @@ export const getCurrConditionsData = () => {
 };
 
 export const getCurrTimeZone = () => {
-  console.log(state.data.timezone);
   return state.data.timezone;
+};
+
+export const getNextTwentyFourHourlyData = () => {
+  const hourlyData = {};
+  // get the current hour (convert to int)
+  const currHour = +state.data.currentConditions.datetime.split(":")[0];
+
+  let counter = 0;
+  // retrieve data of the hours left of today that is within the next 24h
+  for (let h = currHour; h <= 23; h++) {
+    const hourData = state.data.days[0].hours[h];
+    const icon = hourData.icon;
+    const preciProb = hourData.preciprob;
+    const temp = hourData.temp;
+
+    hourlyData[counter] = [h, icon, preciProb, temp];
+    counter++;
+  }
+
+  // retrieve data of the hours left of tomorrow that is within the next 24h
+  for (let h = 0; h <= currHour; h++) {
+    const hourData = state.data.days[1].hours[h];
+    const icon = hourData.icon;
+    const preciProb = hourData.preciprob;
+    const temp = hourData.temp;
+
+    hourlyData[counter] = [h, icon, preciProb, temp];
+    counter++;
+  }
+
+  console.log(hourlyData);
+  return hourlyData;
 };

@@ -56,3 +56,5 @@ export const renderCurrConditionsData = (location, data, timezone) => {
   const formattedSunset = data.sunset.split(":");
   currSunset.innerText = `Sunset: ${formattedSunset[0]}:${formattedSunset[1]}`;
 };
+
+export const renderHoursData = () => {};

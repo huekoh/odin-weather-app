@@ -25,6 +25,7 @@ const getLocationInputHandler = async (location) => {
     const data = await weather.getWeatherData(location);
 
     DataFetchSuccessHandler(data);
+    weather.getNextTwentyFourHourlyData();
   } catch (error) {
     DataFetchErrorHandler(error);
   }
