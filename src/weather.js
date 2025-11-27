@@ -1,3 +1,5 @@
+import { getLocationDateTime } from "./utility";
+
 export const state = {
   location: "Singapore",
   data: {},
@@ -39,17 +41,23 @@ export const getCurrTimeZone = () => {
   return state.data.timezone;
 };
 
+export const getDayDescription = () => {
+  return state.data.days[0].description;
+};
+
 export const getNextTwentyFourHourlyData = () => {
   const hourlyData = {};
-  // get the current hour (convert to int)
-  const currHour = +state.data.currentConditions.datetime.split(":")[0];
+
+  const timezone = state.data.timezone; // sometimes visual crossing's datetime in curr conditions is not accurate to the hour
+  const dateTime = getLocationDateTime(timezone);
+  const currHour = +dateTime.find((p) => p.type === "hour")?.value;
 
   let counter = 0;
   // retrieve data of the hours left of today that is within the next 24h
   for (let h = currHour; h <= 23; h++) {
     const hourData = state.data.days[0].hours[h];
     const icon = hourData.icon;
-    const preciProb = hourData.preciprob;
+    const preciProb = hourData.precipprob;
     const temp = hourData.temp;
 
     hourlyData[counter] = [h, icon, preciProb, temp];
@@ -60,7 +68,7 @@ export const getNextTwentyFourHourlyData = () => {
   for (let h = 0; h <= currHour; h++) {
     const hourData = state.data.days[1].hours[h];
     const icon = hourData.icon;
-    const preciProb = hourData.preciprob;
+    const preciProb = hourData.precipprob;
     const temp = hourData.temp;
 
     hourlyData[counter] = [h, icon, preciProb, temp];

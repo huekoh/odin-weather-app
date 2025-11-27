@@ -1,6 +1,7 @@
 import "./styles/global.css";
 import * as weather from "./weather";
 import * as view from "./view";
+import { getLocationDateTime, formatFullDateTime } from "./utility";
 
 const init = () => {
   console.log("Hello to world from controller script");
@@ -25,7 +26,6 @@ const getLocationInputHandler = async (location) => {
     const data = await weather.getWeatherData(location);
 
     DataFetchSuccessHandler(data);
-    weather.getNextTwentyFourHourlyData();
   } catch (error) {
     DataFetchErrorHandler(error);
   }
@@ -45,9 +45,22 @@ const DataFetchErrorHandler = (error) => {
 
 const updatePageDataHandler = () => {
   const currLocation = weather.getCurrLocation();
-  const currConditionsData = weather.getCurrConditionsData();
   const currTimeZone = weather.getCurrTimeZone();
-  view.renderCurrConditionsData(currLocation, currConditionsData, currTimeZone);
+  const dateTime = getLocationDateTime(currTimeZone);
+  const formattedDateTime = formatFullDateTime(dateTime);
+  const currConditionsData = weather.getCurrConditionsData();
+  const dayDescription = weather.getDayDescription();
+
+  const hourlyData = weather.getNextTwentyFourHourlyData();
+
+  view.renderCurrConditionsData(
+    currLocation,
+    currConditionsData,
+    formattedDateTime,
+    dayDescription
+  );
+
+  view.renderHourlyData(hourlyData);
 };
 
 init();

@@ -10,14 +10,16 @@ export const getLocationDateTime = (timeZone) => {
     hour12: false,
   });
 
-  const now = new Date();
-  const parts = formatter.formatToParts(now);
+  const dateTime = formatter.formatToParts(new Date());
+  return dateTime;
+};
 
-  const weekday = parts.find((p) => p.type === "weekday")?.value || "";
-  const day = parts.find((p) => p.type === "day")?.value || "";
-  const month = parts.find((p) => p.type === "month")?.value || "";
-  const hour = parts.find((p) => p.type === "hour")?.value || "";
-  const minute = parts.find((p) => p.type === "minute")?.value || "";
+export const formatFullDateTime = (dateTime) => {
+  const weekday = dateTime.find((p) => p.type === "weekday")?.value || "";
+  const day = dateTime.find((p) => p.type === "day")?.value || "";
+  const month = dateTime.find((p) => p.type === "month")?.value || "";
+  const hour = dateTime.find((p) => p.type === "hour")?.value || "";
+  const minute = dateTime.find((p) => p.type === "minute")?.value || "";
 
   return `${weekday} ${day} ${month}, ${hour}:${minute}`;
 };
