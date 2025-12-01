@@ -93,7 +93,7 @@ export const renderHourlyData = (data) => {
 
     component.appendChild(iconDiv);
 
-    if (value[2] !== 0) {
+    if (value[2] !== 0 && !value[1].includes("clear")) {
       const precipprobText = document.createElement("p");
       precipprobText.classList.add("blue");
       precipprobText.classList.add("text-sm");

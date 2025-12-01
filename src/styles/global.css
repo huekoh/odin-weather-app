@@ -261,6 +261,7 @@
 
     border-radius: 0.4rem;
     padding: 0.5rem 1rem;
+    padding-bottom: 1rem;
   }
 
   .hour-component {
@@ -403,12 +404,20 @@
   }
 
   /* box styling */
+  .margin-right-auto {
+    margin-right: auto;
+  }
+
   .margin-left-auto {
     margin-left: auto;
   }
 
   .margin-top-auto {
     margin-top: auto;
+  }
+
+  .margin-bot-auto {
+    margin-bottom: auto;
   }
 
   .margin-left-3 {
@@ -466,6 +475,10 @@
     font-size: 2rem;
   }
 
+  .text-3xl {
+    font-size: 3rem;
+  }
+
   .text-4xl {
     font-size: 4rem;
   }
@@ -506,27 +519,19 @@
     letter-spacing: -0.5px;
   }
 
-  .line-height-42px {
-    line-height: 42px;
+  .line-height-1 {
+    line-height: 1;
+  }
+
+  .line-height-1p2 {
+    line-height: 1.2;
+  }
+
+  .line-height-1p5 {
+    line-height: 1.5;
   }
 
   .line-height-2 {
-    line-height: 2rem;
-  }
-
-  .line-height-3 {
-    line-height: 3rem;
-  }
-
-  .line-height-4 {
-    line-height: 4rem;
-  }
-
-  .line-height-5 {
-    line-height: 5rem;
-  }
-
-  .line-height-7 {
-    line-height: 7rem;
+    line-height: 2;
   }
 }

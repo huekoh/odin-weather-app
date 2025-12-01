@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <h1 class="grey line-height-42px">THE FORECAST</h1>
+      <h1 class="grey line-height-1p5">THE FORECAST</h1>
       <div class="height-80px">
         <form
           id="searchbar"
@@ -41,12 +41,8 @@
             <img id="curr-icon" alt="weather icon" class="icon" />
           </div>
           <div>
-            <p id="sunrise-text" class="cream weight-light text-sm">
-              Sunrise: 06:47
-            </p>
-            <p id="sunset-text" class="cream weight-light text-sm">
-              Sunset: 19:32
-            </p>
+            <p id="sunrise-text" class="cream weight-light text-sm"></p>
+            <p id="sunset-text" class="cream weight-light text-sm"></p>
           </div>
         </div>
         <div id="curr-temp">
@@ -63,19 +59,30 @@
 
           <p
             id="temp-text"
-            class="text-6xl line-height-7 cream weight-semibold letter-space-05"
+            class="text-6xl line-height-1p2 cream weight-semibold letter-space-05"
           ></p>
           <p id="curr-time" class="cream weight-med text-med"></p>
           <p id="conditions-text" class="cream weight-light text-sm"></p>
         </div>
       </section>
 
-      <section id="curr-humidity-data" class="weather-card">
+      <section id="curr-humidity-data" class="weather-card flex-col">
         <p class="cream-95 weight-med text-base line-height-2">HUMIDITY</p>
+        <p class="cream text-4xl margin-bot-auto line-height-1">68%</p>
+        <p class="cream weight-normal text-base line-height-1p2">
+          The dew point now is 25°.
+        </p>
       </section>
 
-      <section id="curr-precipitation-data" class="weather-card">
+      <section id="curr-precipitation-data" class="weather-card flex-col">
         <p class="cream-95 weight-med text-base line-height-2">PRECIPITATION</p>
+        <p class="cream text-3xl line-height-1">6.3 mm</p>
+        <p class="cream text-2xl weight-medium line-height-1 margin-bot-auto">
+          Today
+        </p>
+        <p class="cream weight-normal line-height-1p2">
+          47mm is expected for tomorrow.
+        </p>
       </section>
 
       <section id="days-data" class="weather-card">
@@ -95,8 +102,15 @@
         <p class="cream-95 weight-med text-base line-height-2">WIND</p>
       </section>
 
-      <section id="curr-uv-data" class="weather-card">
+      <section id="curr-uv-data" class="weather-card flex-col">
         <p class="cream-95 weight-med text-base line-height-2">UV INDEX</p>
+        <p class="cream text-3xl line-height-1">9</p>
+        <p class="cream text-2xl weight-medium line-height-1 margin-bot-auto">
+          High
+        </p>
+        <p class="cream weight-normal line-height-1p2">
+          Use sun protection until 5pm.
+        </p>
       </section>
 
       <section id="curr-pressure-data" class="weather-card">
