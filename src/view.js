@@ -117,10 +117,48 @@ export const renderHumidityData = (data) => {
   const dewText = document.getElementById("dew-text");
 
   humidityText.innerText = `${Math.round(data[0])}%`;
-  dewText.innerText = `The dew point is now ${data[1]}°`;
+  dewText.innerText = `The dew point is now ${Math.round(data[1])}°`;
 };
 
-export const renderPrecipData = (data) => {};
+export const renderPrecipData = (data) => {
+  const precipTdyText = document.getElementById("precip-tdy-text");
+  const precipTmrText = document.getElementById("precip-tmr-text");
+
+  precipTdyText.innerText = `${Math.round(data[0])}mm`;
+  precipTmrText.innerText = `${Math.round(data[1])}mm is expected for tomorrow`;
+};
+
+export const renderUvData = (data) => {
+  const uvText = document.getElementById("uv-text");
+  uvText.innerText = `${data}`;
+
+  const desc =
+    data < 3
+      ? "Low"
+      : data < 6
+      ? "Moderate"
+      : data < 8
+      ? "High"
+      : data < 11
+      ? "Very High"
+      : "Extreme";
+
+  const uvDescText = document.getElementById("uv-desc-text");
+  uvDescText.innerText = `${desc}`;
+
+  const advice =
+    data < 3
+      ? "Minimal risk today"
+      : data < 6
+      ? "Seek shade, especially during midday"
+      : data < 8
+      ? "Reduce sun exposure and wear sun screen"
+      : data < 11
+      ? "Minimise sun exposure and wear sun screen"
+      : "Advised not to go out, maximum sun protection ";
+  const uvAdviceText = document.getElementById("uv-advice-text");
+  uvAdviceText.innerText = `${advice}`;
+};
 
 export const renderDaysData = (data) => {
   const section = document.getElementById("day-data-cards");

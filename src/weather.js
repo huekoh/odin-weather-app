@@ -85,6 +85,14 @@ export const getCurrHumidityData = () => {
   ];
 };
 
+export const getPrecipData = () => {
+  return [state.data.days[0].precip, state.data.days[1].precip];
+};
+
+export const getUvData = () => {
+  return state.data.days[0].uvindex;
+};
+
 export const getDaysData = () => {
   const data = [];
   let minTemp = Infinity;
