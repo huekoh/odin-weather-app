@@ -301,13 +301,13 @@
   .temp-bar > .bar {
     position: absolute;
     z-index: 2;
-    left: 10%;
-    width: 60%;
+    left: 0;
+    width: 100%;
 
     border-radius: 0.2rem;
     height: 100%;
 
-    background-image: linear-gradient(to right, #ffde5a, #ffa64d);
+    background-image: linear-gradient(to right, #90ff60, #ffe867);
   }
 }
 

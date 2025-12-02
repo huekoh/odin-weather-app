@@ -1,7 +1,7 @@
 import { getLocationDateTime } from "./utility";
 
 export const state = {
-  location: "Singapore",
+  location: "London",
   data: {},
 };
 

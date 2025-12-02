@@ -127,13 +127,15 @@ export const renderDaysData = (data) => {
   section.innerHTML = "";
 
   const days = data[0];
+  const allMinTemp = data[1];
+  const allMaxTemp = data[2];
   days.forEach((day, index) => {
-    const component = createDayComponent(day, index);
+    const component = createDayComponent(day, index, allMinTemp, allMaxTemp);
     section.appendChild(component);
   });
 };
 
-const createDayComponent = (data, index) => {
+const createDayComponent = (data, index, allMinTemp, allMaxTemp) => {
   const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const component = document.createElement("div");
   component.classList.add("day-component");
@@ -165,6 +167,17 @@ const createDayComponent = (data, index) => {
   tempBar.classList.add("temp-bar");
   const bar = document.createElement("div");
   bar.classList.add("bar");
+  const [barWidth, leftTranslate, minColor, maxColor] = getTempBarStyleValues(
+    allMinTemp,
+    allMaxTemp,
+    data.minTemp,
+    data.maxTemp
+  );
+
+  bar.style.width = `${barWidth}%`;
+  bar.style.transform = `translateX(${leftTranslate}%)`;
+  bar.style.backgroundImage = `linear-gradient(to right, ${minColor}, ${maxColor})`;
+
   tempBar.appendChild(bar);
   const minTemp = document.createElement("p");
   minTemp.classList.add(
@@ -189,4 +202,38 @@ const createDayComponent = (data, index) => {
 
   component.append(dayText, iconDiv, tempDisplay);
   return component;
+};
+
+const getTempBarStyleValues = (
+  allMinTemp,
+  allMaxTemp,
+  dayMinTemp,
+  dayMaxTemp
+) => {
+  const barWidth =
+    ((dayMaxTemp - dayMinTemp) / (allMaxTemp - allMinTemp)) * 100;
+  const leftTranslate =
+    ((dayMinTemp - allMinTemp) / (allMaxTemp - allMinTemp)) * 100;
+  const minColor =
+    dayMinTemp < 5
+      ? "#60fcff"
+      : dayMinTemp < 15
+      ? "#67ff9a"
+      : dayMinTemp < 20
+      ? "#f6ff54"
+      : dayMinTemp < 30
+      ? "#ffcb3b"
+      : "#ff7446";
+  const maxColor =
+    dayMaxTemp < 5
+      ? "#60fcff"
+      : dayMaxTemp < 15
+      ? "#67ff9a"
+      : dayMaxTemp < 20
+      ? "#f6ff54"
+      : dayMaxTemp < 30
+      ? "#ffcb3b"
+      : "#ff7446";
+
+  return [barWidth, leftTranslate, minColor, maxColor];
 };
