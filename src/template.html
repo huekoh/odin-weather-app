@@ -68,10 +68,14 @@
 
       <section id="curr-humidity-data" class="weather-card flex-col">
         <p class="cream-95 weight-med text-base line-height-2">HUMIDITY</p>
-        <p class="cream text-4xl margin-bot-auto line-height-1">68%</p>
-        <p class="cream weight-normal text-base line-height-1p2">
-          The dew point now is 25°.
-        </p>
+        <p
+          id="humidity-text"
+          class="cream text-3xl margin-bot-auto line-height-1"
+        ></p>
+        <p
+          id="dew-text"
+          class="cream weight-normal text-base line-height-1p2"
+        ></p>
       </section>
 
       <section id="curr-precipitation-data" class="weather-card flex-col">
@@ -85,10 +89,11 @@
         </p>
       </section>
 
-      <section id="days-data" class="weather-card">
+      <section id="days-data" class="weather-card flex-col">
         <p class="cream-95 weight-med text-base line-height-2">
           10 DAY FORECAST
         </p>
+        <div id="day-data-cards" class="flex-col space-btw"></div>
       </section>
 
       <section id="hours-data" class="">

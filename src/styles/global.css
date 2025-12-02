@@ -16,7 +16,7 @@
   }
 
   .blue {
-    color: rgb(46, 170, 247);
+    color: rgb(75, 186, 255);
   }
 
   .error-color {
@@ -110,8 +110,8 @@
 
   /* icon styling */
   .icon-div-small {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
   }
 
   .icon-div-med {
@@ -188,11 +188,11 @@
     margin-top: 4rem;
     padding-bottom: 4rem;
 
-    width: 1000px;
+    width: 960px;
 
     display: grid;
 
-    grid-template-rows: repeat(5, 220px);
+    grid-template-rows: repeat(5, 215px);
     grid-template-columns: repeat(4, 1fr);
 
     column-gap: 2rem;
@@ -214,6 +214,10 @@
   #days-data {
     grid-column: 1 / 3;
     grid-row: 3 / 6;
+  }
+
+  #day-data-cards {
+    flex: auto;
   }
 
   #hours-data {
@@ -273,9 +277,49 @@
 
     margin: 0.8rem;
   }
+
+  .day-component {
+    margin: 0.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .temp-bar {
+    position: relative;
+
+    flex: initial;
+
+    height: 0.5rem;
+    min-width: 120px;
+    background-color: #6e6e6e65;
+
+    border-radius: 0.2rem;
+  }
+
+  .temp-bar > .bar {
+    position: absolute;
+    z-index: 2;
+    left: 10%;
+    width: 60%;
+
+    border-radius: 0.2rem;
+    height: 100%;
+
+    background-image: linear-gradient(to right, #ffde5a, #ffa64d);
+  }
 }
 
 @layer utilities {
+  .width-42px {
+    width: 42px;
+  }
+
+  .width-55px {
+    width: 55px;
+  }
+
   /* svg styling */
   .cream-svg {
     filter: invert(89%) sepia(5%) saturate(800%) hue-rotate(365deg)
@@ -361,6 +405,10 @@
 
   .space-btw {
     justify-content: space-between;
+  }
+
+  .space-evenly {
+    justify-content: space-evenly;
   }
 
   .align-start {
@@ -455,6 +503,10 @@
   }
 
   /* text styling */
+  .text-center {
+    text-align: center;
+  }
+
   .text-sm {
     font-size: 0.9rem;
   }

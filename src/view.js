@@ -39,7 +39,7 @@ export const renderCurrConditionsData = (
   locationText.innerText = formattedLocation;
 
   const currTemp = document.getElementById("temp-text");
-  currTemp.innerText = data.temp + "°C";
+  currTemp.innerText = Math.round(data.temp) + "°C";
 
   const currTime = document.getElementById("curr-time");
   currTime.innerText = formattedDateTime;
@@ -97,17 +97,96 @@ export const renderHourlyData = (data) => {
       const precipprobText = document.createElement("p");
       precipprobText.classList.add("blue");
       precipprobText.classList.add("text-sm");
-      precipprobText.innerText = `${value[2]}%`;
+      precipprobText.innerText = `${Math.round(value[2])}%`;
       component.appendChild(precipprobText);
       component.classList.add("gap-0p2");
     }
 
     const tempText = document.createElement("p");
     tempText.classList.add("cream");
-    tempText.innerText = `${value[3]}°C`;
+    tempText.innerText = `${Math.round(value[3])}°C`;
 
     component.appendChild(tempText);
 
     section.appendChild(component);
   });
+};
+
+export const renderHumidityData = (data) => {
+  const humidityText = document.getElementById("humidity-text");
+  const dewText = document.getElementById("dew-text");
+
+  humidityText.innerText = `${Math.round(data[0])}%`;
+  dewText.innerText = `The dew point is now ${data[1]}°`;
+};
+
+export const renderPrecipData = (data) => {};
+
+export const renderDaysData = (data) => {
+  const section = document.getElementById("day-data-cards");
+  section.innerHTML = "";
+
+  const days = data[0];
+  days.forEach((day, index) => {
+    const component = createDayComponent(day, index);
+    section.appendChild(component);
+  });
+};
+
+const createDayComponent = (data, index) => {
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const component = document.createElement("div");
+  component.classList.add("day-component");
+
+  const date = new Date(data.date);
+  const dayOfWeek = date.getDay();
+  const dayText = document.createElement("p");
+  dayText.classList.add(
+    "cream",
+    "text-med",
+    "weight-med",
+    "width-55px",
+    "text-center"
+  );
+  dayText.innerText = index === 0 ? "Today" : `${dayNames[dayOfWeek]}`;
+
+  const iconDiv = document.createElement("div");
+  iconDiv.classList.add("icon-div-small");
+  const icon = document.createElement("img");
+  icon.classList.add("icon");
+  icon.src = `./assets/icons/weather/${data.icon}.png`;
+  icon.alt = "weather icon";
+  iconDiv.appendChild(icon);
+
+  const tempDisplay = document.createElement("div");
+  tempDisplay.classList.add("temp-display", "flex", "gap-0p6", "align-center");
+
+  const tempBar = document.createElement("div");
+  tempBar.classList.add("temp-bar");
+  const bar = document.createElement("div");
+  bar.classList.add("bar");
+  tempBar.appendChild(bar);
+  const minTemp = document.createElement("p");
+  minTemp.classList.add(
+    "cream-95",
+    "text-med",
+    "weight-med",
+    "width-55px",
+    "text-center"
+  );
+  minTemp.innerText = `${Math.round(data.minTemp)}°C`;
+  const maxTemp = document.createElement("p");
+  maxTemp.classList.add(
+    "cream-95",
+    "text-med",
+    "weight-med",
+    "width-55px",
+    "text-center"
+  );
+  maxTemp.innerText = `${Math.round(data.maxTemp)}°C`;
+
+  tempDisplay.append(minTemp, tempBar, maxTemp);
+
+  component.append(dayText, iconDiv, tempDisplay);
+  return component;
 };

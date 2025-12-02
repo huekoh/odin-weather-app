@@ -75,6 +75,35 @@ export const getNextTwentyFourHourlyData = () => {
     counter++;
   }
 
-  console.log(hourlyData);
   return hourlyData;
+};
+
+export const getCurrHumidityData = () => {
+  return [
+    state.data.currentConditions.humidity,
+    state.data.currentConditions.dew,
+  ];
+};
+
+export const getDaysData = () => {
+  const data = [];
+  let minTemp = Infinity;
+  let maxTemp = -Infinity;
+
+  for (let i = 0; i < 10; i++) {
+    minTemp = Math.min(state.data.days[i].tempmin, minTemp);
+    maxTemp = Math.max(state.data.days[i].tempmax, maxTemp);
+
+    const dayData = {
+      date: state.data.days[i].datetime,
+      minTemp: state.data.days[i].tempmin,
+      maxTemp: state.data.days[i].tempmax,
+      icon: state.data.days[i].icon,
+      precipprob: state.data.days[i].precipprob,
+    };
+
+    data.push(dayData);
+  }
+
+  return [data, minTemp, maxTemp];
 };

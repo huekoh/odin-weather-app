@@ -50,8 +50,10 @@ const updatePageDataHandler = () => {
   const formattedDateTime = formatFullDateTime(dateTime);
   const currConditionsData = weather.getCurrConditionsData();
   const dayDescription = weather.getDayDescription();
+  const currHumidity = weather.getCurrHumidityData();
 
   const hourlyData = weather.getNextTwentyFourHourlyData();
+  const daysData = weather.getDaysData();
 
   view.renderCurrConditionsData(
     currLocation,
@@ -59,8 +61,9 @@ const updatePageDataHandler = () => {
     formattedDateTime,
     dayDescription
   );
-
   view.renderHourlyData(hourlyData);
+  view.renderDaysData(daysData);
+  view.renderHumidityData(currHumidity);
 };
 
 init();
