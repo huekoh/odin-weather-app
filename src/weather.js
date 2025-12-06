@@ -93,6 +93,16 @@ export const getUvData = () => {
   return state.data.days[0].uvindex;
 };
 
+export const getWindData = () => {
+  const data = {
+    windDir: state.data.currentConditions.winddir,
+    windGust: state.data.currentConditions.windgust,
+    windSpeed: state.data.currentConditions.windspeed,
+  };
+
+  return data;
+};
+
 export const getDaysData = () => {
   const data = [];
   let minTemp = Infinity;

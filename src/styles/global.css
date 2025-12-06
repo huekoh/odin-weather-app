@@ -309,6 +309,11 @@
 
     background-image: linear-gradient(to right, #90ff60, #ffe867);
   }
+
+  .wind-text-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @layer utilities {
@@ -374,6 +379,10 @@
   }
 
   /* display styling */
+  .width-60pc {
+    width: 60%;
+  }
+
   .height-36px {
     height: 36px;
   }
@@ -393,6 +402,10 @@
   .flex-col {
     display: flex;
     flex-direction: column;
+  }
+
+  .flex-auto {
+    flex: auto;
   }
 
   .hidden {
@@ -452,6 +465,10 @@
   }
 
   /* box styling */
+  .margin-tb-1 {
+    margin: 1rem 0rem;
+  }
+
   .margin-right-auto {
     margin-right: auto;
   }

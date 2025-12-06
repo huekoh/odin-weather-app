@@ -160,6 +160,16 @@ export const renderUvData = (data) => {
   uvAdviceText.innerText = `${advice}`;
 };
 
+export const renderWindData = (data) => {
+  const windSpeedText = document.getElementById("wind-speed-text");
+  const windGustText = document.getElementById("wind-gust-text");
+  const windDirText = document.getElementById("wind-dir-text");
+
+  windSpeedText.innerText = `${Math.round(data.windSpeed)} km/h`;
+  windGustText.innerText = `${Math.round(data.windGust)} km/h`;
+  windDirText.innerHTML = `${data.windDir}°`;
+};
+
 export const renderDaysData = (data) => {
   const section = document.getElementById("day-data-cards");
   section.innerHTML = "";
@@ -253,23 +263,23 @@ const getTempBarStyleValues = (
   const leftTranslate =
     ((dayMinTemp - allMinTemp) / (allMaxTemp - allMinTemp)) * 100;
   const minColor =
-    dayMinTemp < 5
+    dayMinTemp < 4
       ? "#60fcff"
-      : dayMinTemp < 15
+      : dayMinTemp < 14
       ? "#67ff9a"
-      : dayMinTemp < 20
+      : dayMinTemp < 19
       ? "#f6ff54"
-      : dayMinTemp < 30
+      : dayMinTemp < 29
       ? "#ffcb3b"
       : "#ff7446";
   const maxColor =
-    dayMaxTemp < 5
+    dayMaxTemp < 4
       ? "#60fcff"
-      : dayMaxTemp < 15
+      : dayMaxTemp < 14
       ? "#67ff9a"
-      : dayMaxTemp < 20
+      : dayMaxTemp < 19
       ? "#f6ff54"
-      : dayMaxTemp < 30
+      : dayMaxTemp < 29
       ? "#ffcb3b"
       : "#ff7446";
 

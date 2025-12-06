@@ -101,8 +101,22 @@
 
         <div id="hours-data-cards" class="flex gap-0p4 overflow-x-auto"></div>
       </section>
-      <section id="curr-wind-data" class="weather-card">
+      <section id="curr-wind-data" class="weather-card flex-col">
         <p class="cream-95 weight-med text-base line-height-2">WIND</p>
+        <div class="flex-col flex-auto space-btw margin-tb-1 width-60pc">
+          <div class="wind-text-wrapper">
+            <p class="cream text-med">Winds</p>
+            <p id="wind-speed-text" class="cream-95 text-med"></p>
+          </div>
+          <div class="wind-text-wrapper">
+            <p class="cream text-med">Gusts</p>
+            <p id="wind-gust-text" class="cream-95 text-med"></p>
+          </div>
+          <div class="wind-text-wrapper">
+            <p class="cream text-med">Direction</p>
+            <p id="wind-dir-text" class="cream-95 text-med"></p>
+          </div>
+        </div>
       </section>
 
       <section id="curr-uv-data" class="weather-card flex-col">

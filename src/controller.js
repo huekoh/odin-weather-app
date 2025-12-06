@@ -53,6 +53,7 @@ const updatePageDataHandler = () => {
   const currHumidity = weather.getCurrHumidityData();
   const currPrecip = weather.getPrecipData();
   const currUv = weather.getUvData();
+  const currWind = weather.getWindData();
 
   const hourlyData = weather.getNextTwentyFourHourlyData();
   const daysData = weather.getDaysData();
@@ -68,6 +69,7 @@ const updatePageDataHandler = () => {
   view.renderHumidityData(currHumidity);
   view.renderPrecipData(currPrecip);
   view.renderUvData(currUv);
+  view.renderWindData(currWind);
 };
 
 init();
